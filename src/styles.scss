@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'variables' as v;
+*{
+    color: v.$primary-light-cyan;
+    font-family: v.$font-family;
+    font-size: v.$font-size;
+    font-weight: v.$font-weight;
+}
+body {
+    background-color: v.$secondary-dark-blue;
+}
