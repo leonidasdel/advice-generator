@@ -3,9 +3,17 @@
 *{
     color: v.$primary-light-cyan;
     font-family: v.$font-family;
-    font-size: v.$font-size;
     font-weight: v.$font-weight;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
 }
 body {
     background-color: v.$secondary-dark-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }

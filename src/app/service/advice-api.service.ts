@@ -9,7 +9,7 @@ export class AdviceApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getRandomAdvice(){
-    return this.httpClient.get(ADVICE_API_SERVER + ADVICE_API_BASE_PATH );
+  public getRandomAdvice(slip_id:number){
+    return this.httpClient.get(`${ADVICE_API_SERVER}${ADVICE_API_BASE_PATH}/${slip_id}` );
   }
 }

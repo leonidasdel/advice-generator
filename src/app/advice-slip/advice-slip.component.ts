@@ -8,16 +8,37 @@ import { AdviceApiService } from '../service/advice-api.service';
 })
 export class AdviceSlipComponent implements OnInit {
 
-  advice = {}
+  advice: advice_item = {
+    slip: {
+      id: null,
+      advice: ''
+    }
+  };
 
-  constructor(private adviceApiService: AdviceApiService) { }
-
-  ngOnInit() {
-
-    this.adviceApiService.getRandomAdvice().subscribe((advice: {})=>{
-      console.log(advice);
-      this.advice = advice;
-    })  
+  constructor(private adviceApiService: AdviceApiService) {
   }
 
+  ngOnInit() {
+    let randomNumber = Math.floor(Math.random() * 150) + 1;  
+    this.adviceApiService.getRandomAdvice(randomNumber).subscribe((advice) => {
+      console.log(advice);
+      this.advice = <advice_item>advice;
+    })
+  }
+
+  getAnotherAdvice(){
+    let randomNumber = Math.floor(Math.random() * 150) + 1;  
+    this.adviceApiService.getRandomAdvice(randomNumber).subscribe((advice) => {
+      console.log(advice);
+      this.advice = <advice_item>advice;
+      console.log(advice);
+    })
+  }
+}
+
+export interface advice_item {
+  slip: {
+    id: number | null;
+    advice: string | '';
+  }
 }

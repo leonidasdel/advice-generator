@@ -1,1 +1,12 @@
-<p>advice-slip works!</p>
+<div class="advice">
+    <h1 class="advice_header">ADVICE #{{advice.slip.id}}</h1>
+    <blockquote class="advice_quote">
+        <q class="advice_quote_text">
+            {{advice.slip.advice}}
+        </q>
+    </blockquote>
+    <img class="advice_divider" src="../../assets/img/pattern-divider-desktop.svg"/>
+    <div (click)="getAnotherAdvice()" class="advice_dice">
+        <img class="advice_dice_img" src="../../assets/img/icon-dice.svg"/>
+    </div>
+</div>
