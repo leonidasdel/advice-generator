@@ -1,0 +1,54 @@
+@use '../../variables' as v;
+
+.advice {
+    animation: slide-in 0.5s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: v.$secondary-dark-gray;
+    max-width: 30rem;
+    gap: 3.5rem;
+    border-radius: 1rem;
+    padding: 2rem 3rem 4rem 3rem;
+    &_header{
+        font-size: v.$font-size-small;
+        color: v.$primary-neon-green;
+        letter-spacing: 0.3em;
+        text-align: center;
+    }
+    &_quote{
+        font-size: v.$font-size;
+        text-align: center;
+    }
+    &_divider {
+        margin-top: 1rem;
+        max-width: 30rem;
+    }
+    &_dice {
+        position: relative;
+        background-color: v.$primary-neon-green;
+        height: 4.3rem;
+        width: 4.3rem;
+        border-radius: 50%;
+        cursor: pointer;
+        position: absolute;
+        bottom: -2.15rem;
+        left: 50%;
+        transform: translate(-50%,0);
+        &_img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 1.8rem;
+            width: 1.8rem;
+        }
+    }
+}
+
+@keyframes slide-in {
+    0%   {transform: translateX(-200%);}
+    100% {transform: translateX(0);}
+  }
