@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdviceApiService } from '../service/advice-api.service';
 
 @Component({
   selector: 'app-advice-slip',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdviceSlipComponent implements OnInit {
 
-  constructor() { }
+  advice = {}
 
-  ngOnInit(): void {
+  constructor(private adviceApiService: AdviceApiService) { }
+
+  ngOnInit() {
+
+    this.adviceApiService.getRandomAdvice().subscribe((advice: {})=>{
+      console.log(advice);
+      this.advice = advice;
+    })  
   }
 
 }
